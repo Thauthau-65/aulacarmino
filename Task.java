@@ -1,54 +1,66 @@
-public class Task{
+/*
+ * 
+ * CLASSE Tarefa:
+    PROPRIEDADES PRIVADAS:
+        inteiro id
+        texto descricao
+        booleano concluida
 
-    // Classe é um modelo resumido do que eu queo criar, como se fosse a planta de uma casa 
+    MÉTODO CONSTRUTOR(id, descricao):
+        definir o id da tarefa
+        definir a descricao da tarefa
+        marcar a tarefa como não concluída (concluida = falso)
 
-    private int id; // Este é o id da task
-    private String description; // Está é a descrição da tak
-    private boolean completed;  // Este é o estado da task, representar se a task está concluída ou não
+    MÉTODO obterId():
+        retornar o id da tarefa
 
-    //O método construtor utiliza o valor de igual, eu sei que ele é construtor pois tem o mesmo nome da miha classe e é público.
-    
-    public Task(int id, String description){ // Este id é uma variável criada dentro do bloco.
-    this.id = id;  //Acessse o atributo da minha classe 
-    this.description = description; //Marca como concluído ou não "O estado"
-    this.completed = false;
+    MÉTODO obterDescricao():
+        retornar a descricao da tarefa
 
+    MÉTODO estaConcluida():
+        retornar se a tarefa está concluída (true ou false)
+
+    MÉTODO marcarComoConcluida():
+        definir concluida como verdadeiro
+
+    MÉTODO toString():
+        retornar uma string formatada com:
+            - o id da tarefa
+            - a descrição
+            - o estado (concluída ou não)
+ */
+
+public class Task {
+    private int id;
+    private String description;
+    private boolean completed;
+
+    public Task(int id, String description) {
+        this.id = id;
+        this.description = description;
+        this.completed = false;
     }
 
-    //get id: Vai retornar o valor do atributo, ele é encapsulado e private
-
-    public int getId(){
-
-        return this.id; // Usa o return para retornar o atributo id
+    public int getId() {
+        return id;
     }
 
-    public String getDescription(){
-
-        return this.description;
+    public String getDescription() {
+        return description;
     }
 
-    public boolean isCompleted(){ //Toda vez que ver um is na frente significa verdadeiro ou falso
-
-        return this.completed;
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public void makCompleted(){ // O void também faz a atribuição de um valor, por isso pode também ser conhecido como set
-        
+    public void markCompleted() {
         this.completed = true;
-
     }
 
-    //Overrigth eu estou sobreecrevendo
-
-    @override
-    public String toString(){
-
-        return "Tarefa: id" + id + "\n" + "Descrição: " + description + "\n" + "Completa: " + completed;
+    @Override
+    public String toString() {
+        return "Tarefa   : " + "id=" + id + "\n" +
+               "Descrição: " + description + "\n" +
+               "Completa : " + completed ;
     }
-
-
-
-    }
-
-
-
+}
